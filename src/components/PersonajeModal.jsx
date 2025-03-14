@@ -22,4 +22,5 @@ function PersonajeModal({ personaje, onClose, onOpen }) {
     );
 }
 
+
 export default PersonajeModal;

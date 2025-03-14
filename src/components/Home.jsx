@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "../assets/styles/Home.css";
-import interstellar1 from "../assets/img/inter-1.jpg";
-import interstellar2 from "../assets/img/inter-2.jpg";
-import interstellar3 from "../assets/img/inter-3.jpg";
+import interstellar1 from "../assets/img./inter-1.jpg";
+import interstellar2 from "../assets/img./inter-2.jpg";
+import interstellar3 from "../assets/img./inter-3.jpg";
 
 const images = [interstellar1, interstellar2, interstellar3];
 
@@ -34,5 +34,6 @@ function Home() {
         </div>
     );
 }
+
 
 export default Home;

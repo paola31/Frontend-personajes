@@ -49,6 +49,7 @@ html, body {
     transition: opacity 1.5s ease-in-out;
 }
 
+
 .slider-image.active {
     opacity: 5;
 }
