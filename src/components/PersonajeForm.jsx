@@ -1,7 +1,7 @@
 import { useState } from "react";
+import "../assets/styles/PersonajeForm.css";  // Asegúrate de que la ruta sea correcta
 
 function PersonajeForm() {
-    // Estado para almacenar los datos del formulario
     const [personaje, setPersonaje] = useState({
         nombre: "",
         identificacion: "",
@@ -9,33 +9,36 @@ function PersonajeForm() {
         rol: "",
         descripcion: "",
         fechaCreacion: "",
-
     });
 
-    // Manejar cambios en los inputs
     const handleChange = (e) => {
         setPersonaje({ ...personaje, [e.target.name]: e.target.value });
     };
 
-    // Enviar el formulario al backend
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const nuevoPersonaje = {
             ...personaje,
-            fechaCreacion: new Date().toISOString() // Agregar fecha actual
+            fechaCreacion: new Date().toISOString(),
         };
 
         const response = await fetch("http://localhost:8080/personajes", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(nuevoPersonaje), // Aquí usamos nuevoPersonaje en lugar de personaje
+            body: JSON.stringify(nuevoPersonaje),
         });
 
         if (response.ok) {
             alert("Personaje agregado correctamente");
-            // Limpiar el formulario
-            setPersonaje({ nombre: "", identificacion: "", imagen: "", rol: "", descripcion: "", fechaCreacion: "",  });
+            setPersonaje({
+                nombre: "",
+                identificacion: "",
+                imagen: "",
+                rol: "",
+                descripcion: "",
+                fechaCreacion: "",
+            });
         } else {
             alert("Error al agregar el personaje");
         }
@@ -43,31 +46,57 @@ function PersonajeForm() {
 
     return (
         <div className="container mt-4">
-            <h2 className="text-center">Crear Nuevo Personaje</h2>
-            <form onSubmit={handleSubmit} className="card p-4">
+            <h2 className="tittle-h2 ">Crear Nuevo Personaje</h2>
+            <form onSubmit={handleSubmit} className="formulario-container"> {/* Cambié p-4 por formulario-container */}
                 <div className="mb-3">
                     <label className="form-label">Nombre</label>
-                    <input type="text" name="nombre" className="form-control" onChange={handleChange} value={personaje.nombre} required />
+                    <input
+                        type="text"
+                        name="nombre"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={personaje.nombre}
+                        required/>
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">Identificación</label>
-                    <input type="text" name="identificacion" className="form-control" onChange={handleChange} value={personaje.identificacion} required />
+                    <input
+                        type="text"
+                        name="identificacion"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={personaje.identificacion}
+                        required/>
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">URL de la Imagen</label>
-                    <input type="text" name="imagen" className="form-control" onChange={handleChange} value={personaje.imagen} />
+                    <input
+                        type="text"
+                        name="imagen"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={personaje.imagen}/>
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">Rol en la película</label>
-                    <input type="text" name="rol" className="form-control" onChange={handleChange} value={personaje.rol} />
+                    <input
+                        type="text"
+                        name="rol"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={personaje.rol}/>
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">Descripción</label>
-                    <textarea name="descripcion" className="form-control" onChange={handleChange} value={personaje.descripcion}></textarea>
+                    <textarea
+                        name="descripcion"
+                        className="form-control"
+                        onChange={handleChange}
+                        value={personaje.descripcion}/>
                 </div>
 
                 <div className="mb-3">
@@ -76,16 +105,14 @@ function PersonajeForm() {
                         type="text"
                         name="fechaCreacion"
                         className="form-control"
-                        value={personaje.fechaCreacion ? new Date(personaje.fechaCreacion).toLocaleString() : "Fecha no disponible"}
-                        readOnly
-                    />
+                        value={personaje.fechaCreacion ? new Date(personaje.fechaCreacion).toLocaleString() : "Se añadirá la fecha actual"}
+                        readOnly/>
                 </div>
 
-                <button type="submit" className="btn btn-primary w-100">Guardar Personaje</button>
+                <button type="submit" className="btn w-100">Guardar Personaje</button>
             </form>
         </div>
     );
-
 }
 
 export default PersonajeForm;

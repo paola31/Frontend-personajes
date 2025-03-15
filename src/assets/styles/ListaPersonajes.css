@@ -1,0 +1,168 @@
+.card {
+  background-color: rgb(255, 255, 255);
+  color: #0c0d1c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: Didot, serif;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.tittle-h2 {
+  font-family: 'Didot', serif ;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #0c0d1c;
+  margin-bottom: 15px;
+}
+
+.card .btn {
+  background-color: #19363d;
+  color: white;
+  font-family: Didot, serif;
+  font-size: .8rem;
+  letter-spacing: .3rem;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  margin-top: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 50rem !important;
+}
+
+.card .btn:hover {
+  background-color: rgb(58, 88, 114);
+}
+
+.btn-danger {
+  background-color: #f44336;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  width: 45%;
+  display: inline-block;
+}
+
+.btn-danger:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-deck .card {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Didot', serif ;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0c0d1c;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .card-deck .card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 35px;
+  font-family: 'Playfair Display', serif;
+}
+
+.select-container label {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #0c0d1c;
+}
+
+.select-container select {
+  background-color: rgba(12, 13, 28, 0.62);
+  color: rgb(255, 255, 255);
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-family: 'Didot', serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.select-container select:hover {
+  background-color: rgba(12, 13, 28, 0.9);
+}
+
+.select-container select:focus {
+  outline: none;
+  border-color: #19363d;
+}
+
+.card .btn {
+  background-color: #19363d;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: .7rem;
+  letter-spacing: .2rem;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  margin-top: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: auto !important;
+}
+
+.card .btn:hover {
+  background-color: rgb(58, 88, 114);
+}
+
+

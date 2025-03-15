@@ -2,11 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home.jsx";
-import App from "./App";  // lista de personajes
 import Navbar from "./components/Navbar";
 import PersonajeForm from "./components/PersonajeForm.jsx";
-
 import "bootstrap/dist/css/bootstrap.min.css";
+import ListaPersonajes from "./ListaPersonajes.jsx";
 
 function Root() {
     return (
@@ -15,11 +14,10 @@ function Root() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/crear" element={<PersonajeForm />} />
-                <Route path="/personajes" element={<App />} />
+                <Route path="/personajes" element={<ListaPersonajes />} />
             </Routes>
         </BrowserRouter>
     );
 }
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(<Root />);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../assets/styles/Home.css";
-import interstellar1 from "../assets/img./inter-1.jpg";
+import interstellar1 from "../assets/img./inter-4.jpg";
 import interstellar2 from "../assets/img./inter-2.jpg";
 import interstellar3 from "../assets/img./inter-3.jpg";
 
@@ -19,7 +19,7 @@ function Home() {
 
     return (
         <div className="home-container">
-            <h1 className="home-title"> Bienvenido al Universo de Interstellar </h1>
+            <h1 className="home-title"> BIENVENIDO AL UNIVERSO INTERSTELLAR </h1>
 
             <div className="image-slider">
                 {images.map((image, index) => (
@@ -27,13 +27,11 @@ function Home() {
                         key={index}
                         src={image}
                         alt={`Slide ${index}`}
-                        className={`slider-image ${index === currentIndex ? "active" : ""}`}
-                    />
+                        className={`slider-image ${index === currentIndex ? "active" : ""}`}/>
                 ))}
             </div>
         </div>
     );
 }
-
 
 export default Home;
